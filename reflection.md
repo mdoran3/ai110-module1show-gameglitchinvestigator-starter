@@ -8,6 +8,16 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
+  BUG 1 : The logic for "Go Lower" and "Go Higher" hints were reversed. For example,
+          I entered 50 and the secret number was 15 and the hint it generated was
+          "Go Higher".
+
+  BUG 2 : The "New Game" button does not generate a new game - the attempts change 
+          but not the game history
+
+  BUG 3 : Changing the difficulty in the UI did not actually change the difficulty
+          of the game. 
+
 ---
 
 ## 2. How did you use AI as a teammate?
