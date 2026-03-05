@@ -61,7 +61,7 @@ attempt_limit_map = {
 low, high = get_range_for_difficulty(difficulty)
 
 st.sidebar.caption(f"Range: {low} to {high}")
-st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
+st.sidebar.caption(f"Attempts allowed: {attempt_limit_map[difficulty]}")
 
 if "secret" not in st.session_state or st.session_state.get("difficulty") != difficulty:
     st.session_state.secret = random.randint(low, high)
@@ -83,7 +83,7 @@ st.subheader("Make a guess")
 
 st.info(
     f"Guess a number between 1 and 100. "
-    f"Attempts left: {attempt_limit - st.session_state.attempts}"
+    f"Attempts left: {attempt_limit_map[difficulty] - st.session_state.attempts}"
 )
 
 with st.expander("Developer Debug Info"):
@@ -156,7 +156,7 @@ if submit:
                 f"Final score: {st.session_state.score}"
             )
         else:
-            if st.session_state.attempts >= attempt_limit:
+            if st.session_state.attempts >= attempt_limit_map[difficulty]:
                 st.session_state.status = "lost"
                 st.error(
                     f"Out of attempts! "
