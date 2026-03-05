@@ -57,9 +57,7 @@ attempt_limit_map = {
     "Normal": 8,
     "Hard": 5,
 }
- # FIXME: Logic breaks here - ranges are not updating correctly
-attempt_limit = attempt_limit_map[difficulty]
-
+#FIX: Refactored logic into logic_utils.py using Claude which outputs the proper ranges here
 low, high = get_range_for_difficulty(difficulty)
 
 st.sidebar.caption(f"Range: {low} to {high}")
