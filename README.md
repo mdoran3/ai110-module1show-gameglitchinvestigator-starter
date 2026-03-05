@@ -25,13 +25,24 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Describe the game's purpose.**
+  With varying degrees of difficulty, the game lets a user guess a randomly selected number within a limited number of attempts, with hints provided after each guess. If the player guesses the number before the attempts expire, they win. Otherwise they lose and can start a new game or adjust the difficulty level.
+
+- [x] **Detail which bugs you found.**
+  - **Bug 1 — “Go Higher/Lower” Logic:** The hint logic was reversed, telling the player to go in the wrong direction.
+  - **Bug 2 — Restart Game:** The game did not clear its state properly, so starting a new game would carry over stale values.
+  - **Bug 3 — Difficulty Not Updating:** The functions were not correctly applying the difficulty parameters selected by the user.
+
+- [x] **Explain what fixes you applied.**
+  All three bugs were fixed, and the core game logic was moved into `logic_utils.py` for a cleaner, more testable codebase.
 
 ## 📸 Demo
 
 - [x] ![Winner screenshot](assets/winner.png)
+
+## 🧪 Tests
+
+- [x] ![Tests screenshot](assets/tests_screenshot.png)
 
 ## 🚀 Stretch Features
 
